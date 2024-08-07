@@ -1,3 +1,8 @@
+/* step 3: Declaring and initalizing humanScore and computerScore as 0 first */
+  let humanScore = 0;
+  let computerScore = 0;
+
+
 /* Step 1: logic implementation for computer choice */
 function getComputerChoice()
 {
