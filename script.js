@@ -18,9 +18,45 @@ function getHumanChoice()
     let input = prompt('Enter your choice among rock, paper or scissors').toLowerCase();
     if(input == 'rock'|| input == 'paper' || input =='scissors')
         return input;
-    else
+    else{
         console.log("It's an invalid choice");
-        return 'Invalid! choice';
+        return null;
+    }
 }
 
-console.log('Your selection is',getHumanChoice());
+// console.log('Your selection is',getHumanChoice());
+
+/* Step 4: game logic to play single round */
+
+
+function playRound (humanChoice, computerChoice)
+{
+
+    
+    if(humanChoice === null){
+        console.log('Invalid chocie!, no round to be played');
+        return;
+    }
+    humanChoice = humanChoice.toLowerCase();
+
+    if(humanChoice == computerChoice)
+    {
+        console.log("It's a Tie!");
+    }
+    else if(humanChoice == 'rock' && computerChoice == 'paper' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissors' && computerChoice == 'paper')
+    {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore++;
+    }
+    else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore++;
+    }
+    
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+console.log(`Score: Your score is ${humanScore}, Computer score is ${computerScore}`);
