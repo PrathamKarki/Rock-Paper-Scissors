@@ -6,3 +6,16 @@ function getComputerChoice()
     return randomChoice;
 }
 console.log('Computer choice is',getComputerChoice());
+
+/* Step 2: logic to get human choice */
+function getHumanChoice()
+{
+    let input = prompt('Enter your choice among rock, paper or scissors').toLowerCase();
+    if(input == 'rock'|| input == 'paper' || input =='scissors')
+        return input;
+    else
+        console.log("It's an invalid choice");
+        return 'Invalid! choice';
+}
+
+console.log('Your selection is',getHumanChoice());
